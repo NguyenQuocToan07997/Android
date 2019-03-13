@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ListView1</string>
+    <string name="btn_Refresh">Refresh</string>
+    <string name="btn_addContact">Add</string>
+    <string name="User_name">name</string>
+    <string name="Pass_word">Pass</string>
+    <string name="Login">Login</string>
+</resources>
