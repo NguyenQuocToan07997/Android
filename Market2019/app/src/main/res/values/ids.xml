@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="txt_KhoiLuong" type="id" />
+    <item name="txt_Gia" type="id" />
+    <item name="update_edt_TTP" type="id" />
+    <item name="update_edt_GH" type="id" />
+    <item name="item_iv_update" type="id" />
+    <item name="btnBack" type="id" />
+</resources>
