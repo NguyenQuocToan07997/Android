@@ -58,8 +58,7 @@ public class DBHelper {
         boolean isExist = false;
         for (int i = 0; i < lastCards.size(); i++) {
             if (lastCards.get(i).getId().equalsIgnoreCase(card.getId())) {
-                ShoppingCard item = lastCards.get(i);
-                item = card;
+                lastCards.set(i,card);
                 isExist = true;
             }
 
@@ -126,7 +125,6 @@ public class DBHelper {
                     lastCards.remove(i);
                     break;
                 }
-
             }
             // luu xuong
             SharedPreferences.Editor editor = ctx.getSharedPreferences(APP_SHARE, MODE_PRIVATE).edit();

@@ -1,19 +1,19 @@
 package com.example.model;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Product {
+public class Product implements Serializable {
 
     private String name;
     private int price;
     private String weight;
-//    private boolean isPayed;
+    private boolean isPayed = false;
 
     public Product(String name, int price, String weight) {
         this.name = name;
         this.price = price;
         this.weight = weight;
-//        this.isPayed = isPayed;
     }
 
     public String getName() {
@@ -40,11 +40,11 @@ public class Product {
         this.weight = weight;
     }
 
-//    public boolean isPayed() {
-//        return isPayed;
-//    }
-//
-//    public void setPayed(boolean payed) {
-//        isPayed = payed;
-//    }
+    public boolean isPayed() {
+        return isPayed;
+    }
+
+    public void setPayed(boolean payed) {
+        isPayed = payed;
+    }
 }

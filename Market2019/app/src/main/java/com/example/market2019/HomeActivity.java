@@ -30,7 +30,7 @@ public class HomeActivity extends AppCompatActivity {
     TextView textViewContent;
 
     private ShoppingCardAdapter adapter;
-    private ArrayList<ShoppingCard> listCard = new ArrayList<>();
+    private ArrayList<ShoppingCard> listCard;
 
     @Override
 
@@ -55,9 +55,10 @@ public class HomeActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
-                ShoppingCard card = listCard.get(position);
+               ShoppingCard card = listCard.get(position);
+               // Product card = new Product("jhdj",77,"jdd");
                 Intent intent = new Intent(HomeActivity.this, ChiTietActivity.class);
-                intent.putExtra("CTMH", intent);
+                intent.putExtra("CT",card);
                 startActivity(intent);
             }
         });

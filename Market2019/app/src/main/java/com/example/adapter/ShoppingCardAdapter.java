@@ -51,6 +51,7 @@ public class ShoppingCardAdapter extends ArrayAdapter<ShoppingCard> {
             viewHolder.textViewTongTien = convertView.findViewById(R.id.txt_TongTien);
             viewHolder.textViewNgay = convertView.findViewById(R.id.txt_Ngay);
             viewHolder.Delete = convertView.findViewById(R.id.item_delete);
+            viewHolder.imgStatus = convertView.findViewById(R.id.imgStatus);
         } else {
             viewHolder = (ViewHolder) convertView.getTag();
         }
@@ -84,6 +85,11 @@ public class ShoppingCardAdapter extends ArrayAdapter<ShoppingCard> {
             }
 
         });
+        if (item.isDone()) {
+            viewHolder.imgStatus.setImageResource(R.mipmap.iconnn);
+        } else {
+            viewHolder.imgStatus.setImageResource(R.mipmap.ic_launcher);
+        }
         return convertView;
     }
 
@@ -91,7 +97,7 @@ public class ShoppingCardAdapter extends ArrayAdapter<ShoppingCard> {
         TextView textViewTenGioHang;
         TextView textViewTongTien;
         TextView textViewNgay;
-        ImageView Delete;
+        ImageView Delete, imgStatus;
 
     }
 }

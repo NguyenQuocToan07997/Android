@@ -33,20 +33,24 @@ public class AddStoreActivity extends AppCompatActivity {
     LinearLayout linearAdd;
     LinearLayout back;
     TextInputEditText txtGH, txtNgay;
-    private int mYear, mMonth, mDay;
     Button btnAdd;
-    EditText txtTP, txtGia;
-
+    EditText txtTP, txtGia,txtKhoiLuong;
     ShoppingCard shoppingCard;
     ListProductsAdapter adapter;
+    EditText edtTenGH, edtNgay,edtTP, edtKL,edtGia;
+    EditText edtPassword;
 
+    private int mYear, mMonth, mDay;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_store);
         shoppingCard = new ShoppingCard();
         onInit();
         onEvent();
+        Onvalidayfrom();
         adapter = new ListProductsAdapter(AddStoreActivity.this, R.layout.sanpham_item, shoppingCard.getProducts());
+        adapter.setiShowChecked(false);
+        adapter.setEditAble(false);
         listView.setAdapter(adapter);
         textViewContent.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -60,15 +64,29 @@ public class AddStoreActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String proName = txtTP.getText().toString().trim();
                 String proPrice = txtGia.getText().toString().trim();
+                String proweight = txtKhoiLuong.getText().toString().trim();
 
-                shoppingCard.getProducts().add(new Product(proName, Integer.parseInt(proPrice),""));
+                shoppingCard.getProducts().add(new Product(proName, Integer.parseInt(proPrice),proweight));
                 adapter.notifyDataSetChanged();
                 txtTP.setText("");
                 txtGia.setText("");
+                txtKhoiLuong.setText("");
                 txtTP.requestFocus();
             }
         });
 
+    }
+
+    private void Onvalidayfrom() {
+//        if (edtTenGH.getText().toString().length() < 1) {
+//            edtTenGH.setError("wrong");
+//            return false;
+//        }
+//        if (edtNgay.getText().toString().length() < 1) {
+//            edtNgay.setError("wrong");
+//            return false;
+//        }
+//        return true;
     }
 
     private void onEvent() {
@@ -126,6 +144,10 @@ public class AddStoreActivity extends AppCompatActivity {
         btnAdd = findViewById(R.id.btnAdd);
         txtTP = findViewById(R.id.txtTP);
         txtGia = findViewById(R.id.txtGia);
+        txtKhoiLuong = findViewById(R.id.txtKL);
+        edtTenGH = findViewById(R.id.txtUsername);
+        edtTP = findViewById(R.id.txtPassword);
+
     }
 }
 

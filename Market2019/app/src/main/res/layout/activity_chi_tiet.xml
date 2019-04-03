@@ -39,7 +39,17 @@
             android:textColor="@color/colorPrimaryDark"
             android:textSize="24dp" />
 
+        <LinearLayout
+            android:id="@+id/linearDone"
+            android:layout_width="54dp"
+            android:layout_height="match_parent"
+            android:gravity="center">
 
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:background="@drawable/ic_arrow_back_black_24dp" />
+        </LinearLayout>
 
     </LinearLayout>
 
@@ -85,4 +95,5 @@
         android:layout_height="wrap_content"
 
         android:descendantFocusability="blocksDescendants"></ListView>
+
 </LinearLayout>
