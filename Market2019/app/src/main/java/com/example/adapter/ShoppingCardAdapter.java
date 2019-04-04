@@ -62,8 +62,9 @@ public class ShoppingCardAdapter extends ArrayAdapter<ShoppingCard> {
             for (int i = 0; i < item.getProducts().size(); i++) {
                 tongTien = tongTien + item.getProducts().get(i).getPrice();
             }
+
         }
-        viewHolder.textViewTongTien.setText(tongTien + " vnđ");
+        viewHolder.textViewTongTien.setText(tongTien + "vnđ");
         viewHolder.textViewNgay.setText(String.valueOf(item.getDate()));
         viewHolder.Delete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -88,7 +89,7 @@ public class ShoppingCardAdapter extends ArrayAdapter<ShoppingCard> {
         if (item.isDone()) {
             viewHolder.imgStatus.setImageResource(R.mipmap.iconnn);
         } else {
-            viewHolder.imgStatus.setImageResource(R.mipmap.ic_launcher);
+            viewHolder.imgStatus.setImageResource(R.drawable.ic_sentiment_dissatisfied_black_24dp);
         }
         return convertView;
     }

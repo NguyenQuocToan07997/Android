@@ -32,7 +32,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (Onvalidayfrom()) {
-                    if (edtUsername.getText().toString().endsWith("a") && edtPassword.getText().toString().equals("a")) {
+                    if (edtUsername.getText().toString().endsWith("toan") && edtPassword.getText().toString().equals("123")) {
                         UserModel userModel = new UserModel(edtUsername.getText().toString().trim(), edtPassword.getText().toString().trim());
                         DBHelper.saveLoinInfo(LoginActivity.this, userModel);
                         Toast.makeText(LoginActivity.this, "Login Success", Toast.LENGTH_LONG).show();

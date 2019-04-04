@@ -6,25 +6,20 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.adapter.ListProductsAdapter;
-import com.example.adapter.ShoppingCardAdapter;
 import com.example.model.Product;
 import com.example.model.ShoppingCard;
 import com.example.utils.DBHelper;
 
-import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.List;
 
 public class AddStoreActivity extends AppCompatActivity {
 
@@ -38,7 +33,6 @@ public class AddStoreActivity extends AppCompatActivity {
     ShoppingCard shoppingCard;
     ListProductsAdapter adapter;
     EditText edtTenGH, edtNgay,edtTP, edtKL,edtGia;
-    EditText edtPassword;
 
     private int mYear, mMonth, mDay;
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +71,18 @@ public class AddStoreActivity extends AppCompatActivity {
 
     }
 
-    private void Onvalidayfrom() {
-//        if (edtTenGH.getText().toString().length() < 1) {
-//            edtTenGH.setError("wrong");
+    private boolean Onvalidayfrom() {
+        if (edtTenGH.getText().toString().length() < 1) {
+            edtTenGH.setError("wrong");
+            return false;
+        }
+//        if (edtTP.getText().toString().length() < 1) {
+//            edtTP.setError("wrong");
 //            return false;
 //        }
-//        if (edtNgay.getText().toString().length() < 1) {
-//            edtNgay.setError("wrong");
-//            return false;
-//        }
-//        return true;
+        return true;
     }
+
 
     private void onEvent() {
         linearAdd.setOnClickListener(new View.OnClickListener() {
@@ -145,8 +140,8 @@ public class AddStoreActivity extends AppCompatActivity {
         txtTP = findViewById(R.id.txtTP);
         txtGia = findViewById(R.id.txtGia);
         txtKhoiLuong = findViewById(R.id.txtKL);
-        edtTenGH = findViewById(R.id.txtUsername);
-        edtTP = findViewById(R.id.txtPassword);
+        edtTenGH = findViewById(R.id.txtGH);
+//        edtTP = findViewById(R.id.txtTP);
 
     }
 }
