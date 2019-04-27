@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">GiuaKyAndroid</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="DanhSachMonHoc">Danh Sách Môn Học</string>
+    <string name="DanhSachDienThoai">Danh Sách Điện Thoại</string>
+    <string name="product_name">Product_name</string>
+    <string name="Price">Price</string>
+    <string name="Description">Description</string>
+    <string name="Producer">Producer</string>
+</resources>
