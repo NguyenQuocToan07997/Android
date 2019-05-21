@@ -38,7 +38,6 @@ public class ProductActivity extends AppCompatActivity {
         edtdescription.setText(intent.getStringExtra("description"));
         edtsubject_code.setText(intent.getStringExtra("subject_code"));
         edtsubject_name.setText(intent.getStringExtra("subject_name"));
-
         btnEdit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,11 +48,12 @@ public class ProductActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Disable();
-                MainActivity.myRef = MainActivity.db.getReference("AdvancedAndroidFinalTest");
-                MainActivity.myRef.child(edtsubject_code.getText().toString()).child("credits").setValue(Integer.parseInt(edtcredits.getText().toString()));
-                MainActivity.myRef.child(edtsubject_code.getText().toString()).child("description").setValue(edtdescription.getText().toString());
-                MainActivity.myRef.child(edtsubject_code.getText().toString()).child("subject_code").setValue(edtsubject_code.getText().toString());
-                MainActivity.myRef.child(edtsubject_code.getText().toString()).child("subject_name").setValue(edtsubject_name.getText().toString());
+
+                DatabaseReference child =MainActivity.myRef.child(intent.getStringExtra("Key"));
+                child.child("credits").setValue(Integer.parseInt(edtcredits.getText().toString()));
+                child.child("description").setValue(edtdescription.getText().toString());
+                child.child("subject_code").setValue(edtsubject_code.getText().toString());
+                child.child("subject_name").setValue(edtsubject_name.getText().toString());
                 finish();
             }
         });

@@ -54,7 +54,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
             public void onClick(View v) {
                 DatabaseReference reference;
                 reference = FirebaseDatabase.getInstance().getReference("AdvancedAndroidFinalTest");
-                reference.child(viewHolder.subject_code.getText().toString()).removeValue();
+                reference.child(model.getKeyParent()).removeValue();
             }
         });
         viewHolder.image.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +65,7 @@ public class ContactAdapter extends RecyclerView.Adapter<ContactAdapter.ViewHold
                 i.putExtra("description", model.getDescription());
                 i.putExtra("subject_code", model.getSubject_code());
                 i.putExtra("subject_name", model.getSubject_name());
+                i.putExtra("Key",model.getKeyParent());
                 mContext.startActivity(i);
             }
         });

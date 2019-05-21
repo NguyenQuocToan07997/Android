@@ -4,6 +4,8 @@
     android:id="@+id/place_delete"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:background="@color/colorrecyclerview"
+    android:layout_marginBottom="8dp"
     android:orientation="horizontal"
     android:padding="10dp">
 

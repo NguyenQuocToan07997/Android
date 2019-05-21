@@ -1,5 +1,7 @@
 package com.Model;
 
+import com.google.firebase.database.Exclude;
+
 public class UserModel {
     private String userId;
     private String username;
@@ -40,6 +42,15 @@ public class UserModel {
     private String description;
     private String subject_code;
     private String subject_name;
+    private String keyParent;
+    @Exclude
+    public String getKeyParent() {
+        return keyParent;
+    }
+    @Exclude
+    public void setKeyParent(String keyParent) {
+        this.keyParent = keyParent;
+    }
 
     public UserModel(int credits, String description, String subject_code, String subject_name) {
         this.credits = credits;
